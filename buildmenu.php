@@ -26,7 +26,7 @@ function buildMenu() {
         $set->addLeft('Assignments', $R.'assignments');
         $set->addLeft('Book', $R . 'book');
     } else {
-        $set->addLeft('OER', $R.'materials');
+        $set->addLeft('Book', $R . 'book');
     }
     
     if ( isset($_SESSION['id']) ) {
