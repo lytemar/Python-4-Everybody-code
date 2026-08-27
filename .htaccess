@@ -16,6 +16,8 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine on
+    # config.php stubs / secrets; FileRouter also maps /config and /config-dist
+    RewriteRule ^config(-dist)?(\.php)?(/.*)?$ - [R=404,L,NS]
     # Route /labs to Tsugi (must precede !-d rule; site-labs/lessons.json is denied via .htaccess)
     RewriteRule ^labs/?$ tsugi.php [L,QSA]
     RewriteCond %{REQUEST_FILENAME} !-f
